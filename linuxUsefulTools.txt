@@ -1,0 +1,68 @@
+theHarvester
+
+-d [domain to search] e.g microsoft.com
+-l [length] e.g 50
+-b [source for searching] e.g duckduckgo
+
+---------------------------------------------
+crt.sh
+
+search sub-domains and more info
+
+---------------------------------------------
+wappalyzer
+
+firefox extension to see what tecnologies websites are using
+
+---------------------------------------------
+whatweb
+
+identifies web technologies but in terminal
+
+-v --verbose
+
+----------------------------------------------
+nmap
+
+Allows to sweep ip's and ports
+
+-T [speed of scanning] e.g -T3
+-p [ports to search] e.g -p500,200,150
+-A [do everything in a sweep]
+
+-oN <file> [Save scan to a file]
+
+Also has some premade scripts
+
+--script=[script] e.g --script=ssl-enum-ciphers <site>
+
+it shows the state and grade of ciphers used in the website
+
+------------------------------------------------
+john
+hash-identifier
+
+cracks hashes and password
+checks potential hash used
+
+--list=formats shows all available hashing formats supported
+--list=formats | grep -i --color <hash> show all hashes indicated in color
+
+john --format=Raw-SHA256 <file> Tries to crack the password with the specified format
+john --format=Raw-SHA256 --mask="?l" --min-length=n --max-length=n <file> Tries to crack password with a specified min and max length
+john --format=Raw-SHA256 --wordlist=<path-to-wordlist> <file> Tries to crack password with the help of a file text with commom passwords 
+
+---------------------------------------------------
+wireshark
+
+Use to check connections "three way handshake" ACK, SYN, SYN/ACK
+
+---------------------------------------------------
+nessus
+
+An application to search ports and other info from a specified host
+
+----------------------------------------------------
+msfconsole
+
+similar to nmap but a terminal application in itself

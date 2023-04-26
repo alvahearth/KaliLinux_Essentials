@@ -1,0 +1,23 @@
+theHarvester
+
+-d [domain to search] e.g microsoft.com
+-l [length] e.g 50
+-b [source for searching] e.g duckduckgo
+
+crt.sh
+
+search sub-domains and more info
+
+wappalyzer
+
+firefox extension to see what tecnologies websites are using
+
+whatweb
+
+identifies web technologies but in terminal
+
+-v --verbose
+
+builwith (website)
+
+search technologies and more info
