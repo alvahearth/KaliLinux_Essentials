@@ -63,6 +63,40 @@ nessus
 An application to search ports and other info from a specified host
 
 ----------------------------------------------------
-msfconsole
+msfconsole (metasploit)
 
 similar to nmap but a terminal application in itself
+
+show -h [list of all available tools]
+
+use [to select and specific tool]
+
+----------------------------------------------------
+gobuster
+
+An application to seach files and miscellaneous within a ip adress
+
+sudo gobuster dir -e -u http://192.168.1.147 -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt -x .php,.txt,.html
+
+-------------------------------------------------------
+cvedetails (website)
+
+website full of known vulnerabilities
+
+--------------------------------------------------------
+ftp connections (file transfer protocol)
+
+ftp <ip> [establish connection]
+if user is "anonymous" no password is required
+
+230 status code is login succesfull
+lcd <path> [choose the destinations of downloaded files]
+get <object> [download a specific file from the ftp server]
+
+---------------------------------------------------------
+smb connection (server message block)
+
+smbclient -L <ip> [list all directories of the smb client]
+smbclient //<ip>/<directory>
+get <object> [download items]
+more <file> [(inside the smb cliente) to cat files]
