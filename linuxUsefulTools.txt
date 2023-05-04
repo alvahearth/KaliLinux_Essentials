@@ -74,9 +74,11 @@ use [to select and specific tool]
 ----------------------------------------------------
 gobuster
 
-An application to seach files and miscellaneous within a ip adress
+An application to seach files, directories, subdomains and miscellaneous within a ip adress
 
 sudo gobuster dir -e -u http://192.168.1.147 -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt -x .php,.txt,.html
+
+sudo gobuster vhost -u http://thetoppers.htb --apend-domain -w /usr/share/wordlists/amass/subdomains-top1mil-110000.txt 
 
 -------------------------------------------------------
 cvedetails (website)
@@ -100,3 +102,7 @@ smbclient -L <ip> [list all directories of the smb client]
 smbclient //<ip>/<directory>
 get <object> [download items]
 more <file> [(inside the smb cliente) to cat files]
+
+---------------------------------------------------------
+
+hosts names are found in /etc/hosts

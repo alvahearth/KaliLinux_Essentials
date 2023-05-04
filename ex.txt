@@ -1,0 +1,8 @@
+# Nmap 7.93 scan initiated Tue Apr 25 00:55:05 2023 as: nmap -Pn -T4 -p 443 -oN ex.txt 192.168.1.82
+Nmap scan report for 192.168.1.82
+Host is up.
+
+PORT    STATE    SERVICE
+443/tcp filtered https
+
+# Nmap done at Tue Apr 25 00:55:07 2023 -- 1 IP address (1 host up) scanned in 1.45 seconds
