@@ -45,8 +45,8 @@ hash-identifier
 cracks hashes and password
 checks potential hash used
 
---list=formats shows all available hashing formats supported
---list=formats | grep -i --color <hash> show all hashes indicated in color
+--list=formats [shows all available hashing formats supported]
+--list=formats | grep -i --color <hash> [show all hashes indicated in color]
 
 john --format=Raw-SHA256 <file> Tries to crack the password with the specified format
 john --format=Raw-SHA256 --mask="?l" --min-length=n --max-length=n <file> Tries to crack password with a specified min and max length
@@ -65,7 +65,7 @@ An application to search ports and other info from a specified host
 ----------------------------------------------------
 msfconsole (metasploit)
 
-similar to nmap but a terminal application in itself
+an exploitation tool 
 
 show -all [list of all available tools]
 search <tool> [search a specific tool]
@@ -151,6 +151,38 @@ get <object> [download items]
 more <file> [(inside the smb cliente) to cat files]
 
 ---------------------------------------------------------
+ssh connections
+
+To connect to a existing ssh server
+
+<user@ip> [you have to specify the user you want to connect to the server and the ip host]
+-p [in what port you are connecting (default is 22)]
+
+Dynamic port forwarding
+
+this if for transferring trafic from a specific port on the remote server, allowing us to use
+services like we were on our local machine
+
+-D [to specify that we are using Dynamic port forwarding]
+<port> [port we want to redirect the trafic]
+
+ssh -D <port> name@ip
+ssh -D 1234 raul@1.1.1.1
+
+In order for this work we need proxychains enable
+
+sudo apt install proxychains
+
+we need to modify the conf file to suit our needs
+/etc/proxychains.conf
+
+at the end of the file we specify the ip for tunneling
+ip port
+
+in order to connect succesfully to the db, we'll use the next sentence
+proxychains psql -U username -h target ip || host -p <port number>
+
+--------------------------------------------------------
 
 hosts names are found in /etc/hosts
 
@@ -183,4 +215,14 @@ ip [target]
 -d [domain]
 
 ---------------------------------------------------
-more stuff
+hydra
+
+password spraying
+
+-l [specify user to try passwords]
+-L [specify a list of users with a text file]
+-p [the password you want to check against]
+<ip> [the ip target]
+service [ssh, ftp, etc.]
+
+hydra -L users.txt -p 'funnel123#!#' 10.129.228.195 ssh
