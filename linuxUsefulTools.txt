@@ -150,6 +150,8 @@ smbclient //<ip>/<directory>
 get <object> [download items]
 more <file> [(inside the smb cliente) to cat files]
 
+smbclient -L <ip> -U <username>
+
 ---------------------------------------------------------
 ssh connections
 
