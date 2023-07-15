@@ -22,12 +22,14 @@ unzip FiraCode.zip
 fc-cache -fv
 rm FiraCode.zip
 
+sudo sed -i "s/FiraCodeNerdFont-Light.ttf/FiraCodeNerdFont-Light.ttf/" /etc/default/console-setup
 cd
 sudo apt install neofetch -y
 sudo apt install python3-venv -y
 
 
 $ curl -LO https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_13.0.0_amd64.deb
+sleep 3
 sudo dpkg -i ripgrep_13.0.0_amd64.deb	
 #install astrovim
 
@@ -37,6 +39,9 @@ mv ~/.local/share/nvim ~/.local/share/nvim.bak
 mv ~/.local/state/nvim ~/.local/state/nvim.bak
 mv ~/.cache/nvim ~/.cache/nvim.bak
 git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
-nvim
 
+sudo echo "alias vim=nvim" >> .zshrc
+source .zshrc
 cd
+
+
